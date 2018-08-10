@@ -1,0 +1,22 @@
+image: node:latest
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  environment:
+    name: development
+  only:
+    - master
+  script:
+    - npm install
+    - git config --global user.email "gurpreet@newput.com"
+    - git config --global user.name "Gurpreet-Chhabra"
+    - git remote add heroku https://heroku:$access_token@git.heroku.com/joom-8.git
+    - npm run build
+    - git add dist/
+    - git commit -am "make it better"
+    - git push heroku master
+  only:
+    - master
