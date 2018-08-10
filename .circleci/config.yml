@@ -27,6 +27,7 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
+      - run: heroku login
       - run: git config --global user.email "gurpreet@newput.com"
       - run: git config --global user.name "Gurpreet-Chhabra"
       - run: git remote add heroku https://heroku:$access_token@git.heroku.com/joom-8.git
