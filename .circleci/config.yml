@@ -30,14 +30,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: npm install
-      - run: git config --global user.email "gurpreet@newput.com"
-      - run: git config --global user.name "Gurpreet-Chhabra"
-      - run: git config --global user.password "b5731685-38b5-436c-a494-41114f758522"
-      - run: git remote add heroku https://heroku:$access_token@git.heroku.com/joom-8.git
-      - run: npm run build
-      - run: git add dist/
-      - run: git commit -am "make it better"
+
 
       - save_cache:
           paths:
