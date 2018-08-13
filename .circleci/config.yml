@@ -21,6 +21,8 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
+      - run: git config --global user.email "gurpreet@newput.com"
+      - run: git config --global user.name "Gurpreet-Chhabra"
       - run: npm run build
       - run: git add dist/
       - run: git commit -am "make it better"
